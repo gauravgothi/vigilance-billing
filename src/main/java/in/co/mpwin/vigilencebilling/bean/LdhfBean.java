@@ -3,14 +3,16 @@ package in.co.mpwin.vigilencebilling.bean;
 import in.co.mpwin.vigilencebilling.interfaces.BeanInterface;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "LdfhBean")
-@Table(name = "ldfh")
+@Entity(name = "LdhfBean")
+@Table(name = "ldhf")
 public class LdhfBean implements BeanInterface {
 
     @Id
