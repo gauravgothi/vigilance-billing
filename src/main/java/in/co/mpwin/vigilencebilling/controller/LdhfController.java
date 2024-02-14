@@ -21,7 +21,7 @@ import java.util.List;
 public class LdhfController {
         @Autowired private LdhfInterface ldhfInterface;
 
-        @GetMapping("/")
+        @GetMapping("")
         public ResponseEntity<?> getLdhfBeans(){
             ResponseEntity respLdhfBeans =null;
             List<LdhfBean> ldhfBeanList=new ArrayList<>();
