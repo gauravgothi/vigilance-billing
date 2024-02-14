@@ -2,15 +2,13 @@ package in.co.mpwin.vigilencebilling.bean;
 
 import in.co.mpwin.vigilencebilling.interfaces.BeanInterface;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Setter
+@Setter @Getter @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "LdfhBean")
-@Table(name = "ldfh")
+@Entity(name = "LdhfBean")
+@Table(name = "ldhf")
 public class LdhfBean implements BeanInterface {
 
     @Id
@@ -46,7 +44,7 @@ public class LdhfBean implements BeanInterface {
     private String factorDirectTheft;
 
     @Column(name="factor_other")
-    private String factorother;
+    private String factorOther;
     @Column(name="remark")
     private String remark;
 
