@@ -31,4 +31,9 @@ public class AppliancesLoadTypeService implements AppliancesLoadTypeInterface {
     public void deleteAppliancesLoadType(Long id) {
         appliancesLoadTypeRepo.deleteById(id);
     }
+
+    public AppliancesLoadTypeBean getAppliancesLoadTypeByApplianceNameAndTariffCode(String applianceName,String tariffCode){
+        return appliancesLoadTypeRepo.findByApplianceNameAndTariffCode(applianceName,tariffCode);
+
+    }
 }

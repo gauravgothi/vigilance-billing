@@ -12,4 +12,6 @@ public interface AppliancesLoadTypeInterface {
     AppliancesLoadTypeBean saveOrUpdateAppliancesLoadType(AppliancesLoadTypeBean appliancesLoadType);
 
     void deleteAppliancesLoadType(Long id);
+
+    AppliancesLoadTypeBean getAppliancesLoadTypeByApplianceNameAndTariffCode(String applianceName,String TariffCode);
 }

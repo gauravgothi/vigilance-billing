@@ -1,11 +1,18 @@
 package in.co.mpwin.vigilencebilling.dtos;
 
+import lombok.*;
+
+@Getter@Setter@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class LoadUnitDto {
     private String p4id;
     private String ivrs;
     private String theftType;
     private String tariff;
+    private String tariffCode;
     private String isContinuous;
+    private String noOfShift;
     
     private Double totalLightLoad = 0.0;
     private Double totalSeasonalLoad = 0.0;
@@ -23,9 +30,9 @@ public class LoadUnitDto {
     private Double totalSeasonalHours = 0.0;
     private Double totalPettyHours = 0.0;
 
-    private Double totalLightFactor = 0.0;
-    private Double totalSeasonalFactor = 0.0;
-    private Double totalPettyFactor = 0.0;
+    private Double lightFactor = 0.0;
+    private Double seasonalFactor = 0.0;
+    private Double pettyFactor = 0.0;
 
     private Double totalLightUnits = 0.0;
     private Double totalSeasonalUnits = 0.0;

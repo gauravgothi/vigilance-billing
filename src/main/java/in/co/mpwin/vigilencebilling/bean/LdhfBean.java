@@ -47,10 +47,10 @@ public class LdhfBean implements BeanInterface {
     private double hours;
 
     @Column(name="factor_direct_theft")
-    private String factorDirectTheft;
+    private Double factorDirectTheft;
 
     @Column(name="factor_other")
-    private String factorOther;
+    private Double factorOther;
     @Column(name="remark")
     private String remark;
 

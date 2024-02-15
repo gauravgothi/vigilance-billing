@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AppliancesLoadTypeRepo extends JpaRepository<AppliancesLoadTypeBean,Long> {
+    AppliancesLoadTypeBean findByApplianceNameAndTariffCode(String applianceName, String tariffCode);
 }

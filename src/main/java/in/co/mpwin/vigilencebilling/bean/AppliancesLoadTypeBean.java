@@ -10,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "AppliancesLoadTypeBean")
-@Table(name = "appliances_load_type", schema = "vigilance")
+@Table(name = "appliances_load_type", schema = "vigilance",uniqueConstraints = @UniqueConstraint(name = "appliances_load_type_ukey",columnNames = {"appliance_name","tariff_code","load_type"}))
 public class AppliancesLoadTypeBean implements BeanInterface {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,9 @@ public class AppliancesLoadTypeBean implements BeanInterface {
 
     @Column(name = "appliance_name")
     private String applianceName;
+
+    @Column(name = "tariff")
+    private String tariff;
 
     @Column(name = "tariff_code")
     private String tariffCode;

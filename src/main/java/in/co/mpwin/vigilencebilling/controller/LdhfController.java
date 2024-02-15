@@ -1,6 +1,7 @@
 package in.co.mpwin.vigilencebilling.controller;
 
 import in.co.mpwin.vigilencebilling.bean.LdhfBean;
+import in.co.mpwin.vigilencebilling.dtos.LoadUnitDto;
 import in.co.mpwin.vigilencebilling.interfaces.LdhfInterface;
 import in.co.mpwin.vigilencebilling.miscellanious.ApiException;
 import in.co.mpwin.vigilencebilling.miscellanious.Message;
@@ -38,4 +39,21 @@ public class LdhfController {
             return  respLdhfBeans;
 
         }
+    @GetMapping("/total-unit")
+    public ResponseEntity<?> getTotalUnits(){
+        ResponseEntity respLdhfBeans =null;
+        List<LoadUnitDto> loadUnitDtoList=new ArrayList<>();
+        try{
+            loadUnitDtoList = ldhfInterface.getLoadUnitDtos("1123","","Direct","DL","LV1","NA","NA");
+            respLdhfBeans=new ResponseEntity(loadUnitDtoList, HttpStatus.OK);
+        }catch (ApiException apiException) {
+            respLdhfBeans = new ResponseEntity<>(new Message(apiException.getMessage()), apiException.getHttpStatus());
+
+        } catch (Exception e) {
+            respLdhfBeans = new ResponseEntity<>(new Message(e.getMessage()), HttpStatus.BAD_REQUEST);
+
+        }
+        return  respLdhfBeans;
+
+    }
 }
